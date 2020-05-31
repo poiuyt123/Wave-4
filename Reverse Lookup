@@ -1,0 +1,11 @@
+def reverseLookup(dictionary, value):
+    keys = []
+    for key in dictionary.keys():
+        if dictionary[key] == value:
+            keys.append(key)
+    return keys
+
+student_age = {'Andy': 15, 'Rob': 17, 'Billy': 17, 'Jess': 19}
+print(reverseLookup(student_age, 15))
+print(reverseLookup(student_age, 17))
+print(reverseLookup(student_age, 10))
