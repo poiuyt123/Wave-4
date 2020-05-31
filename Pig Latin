@@ -7,14 +7,13 @@ user_word = input('Enter a word to translate to Pig Latin: ')
 
 first_letter = user_word[0]
 first_letter = str(first_letter)
-
+length_of_word = len(user_word)
 if first_letter in consonant:
-    length_of_word = len(user_word)
-    remove_first_letter = user_word[1:length_of_word]
-    pig_latin=remove_first_letter+first_letter+ay
-    print('The word in Pig Latin is:',pig_latin)
-elif first_letter in vowel:
+ 
+ while (user_word[0] in consonant):
+  user_word = user_word[1:length_of_word] + user_word[0]
+ print(user_word + ay)
+
+if first_letter in vowel:
     pig_latin=user_word+way
-    print('The word in Pig Latin is:',pig_latin)
-else:
-  print ("Error")
+    print(pig_latin)
