@@ -1,19 +1,29 @@
-ay = 'ay'
-way = 'way'
-consonant = ('b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x', 'y','z')
-vowel = ('a','e','i','o','u')
+def pyglatin(word):
+ pig_latin =''
+  
+ ay = 'ay'
 
-user_word = input('Enter a word to translate to Pig Latin: ')
+ way = 'way'
+ consonant = ('b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x', 'y','z')
+ vowel = ('a','e','i','o','u')
 
-first_letter = user_word[0]
-first_letter = str(first_letter)
-length_of_word = len(user_word)
-if first_letter in consonant:
+ user_word = word
+
+ first_letter = user_word[0]
+ first_letter = str(first_letter)
+ length_of_word = len(user_word)
+ if first_letter in consonant:
  
- while (user_word[0] in consonant):
-  user_word = user_word[1:length_of_word] + user_word[0]
- print(user_word + ay)
+  while (user_word[0] in consonant):
+   user_word = user_word[1:length_of_word] + user_word[0]
+  pig_latin = (user_word + ay)
 
-if first_letter in vowel:
+ elif first_letter in vowel:
     pig_latin=user_word+way
-    print(pig_latin)
+ return pig_latin
+
+sentence = input('Enter a sentence: ')
+for word in sentence.split():
+     
+ print (pyglatin(word))
+
